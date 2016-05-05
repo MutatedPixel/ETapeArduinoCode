@@ -51,79 +51,50 @@ int FindInches(float RATIO, float RESISTANCE, float EMPTY, float FULL){
   int Inches;
 //Comment out anything that is over the amount of inches your etape is. If you do that comment out your max inches too,
 //i.e. if my etape is 12 inches comment out the 12 inch if statement also. In place of that follow the instructions 
-//further down. Or dont comment it out, im not sure if it matters or not.
-//  Serial.println("Ratio");
-//  Serial.println(RATIO);
-//  Serial.println("Resistance");
-//  Serial.println(RESISTANCE);
-//  Serial.println("Empty");
-//  Serial.println(EMPTY);
-//  Serial.println("Full");
-//  Serial.println(FULL);
-  if(RESISTANCE >= EMPTY){
+//further down.
+  if(EMPTY-(RATIO*InsertMaxInchesHere) >= RESISTANCE){ //Replace InsertMaxInches with your max inches.
+    Inches = InsertMaxInchesHere; //Do it again here.
+  }
+  else if(EMPTY-(RATIO*11) >= Resistance){
+    Inches = 11;
+  }
+  else if(EMPTY-(RATIO*10) >= Resistance){
+    Inches = 10;
+  }
+  else if(EMPTY-(RATIO*9) >= Resistance){
+  Inches = 9;
+  }
+  else if(EMPTY-(RATIO*8) >= Resistance){
+  Inches = 8;
+  }
+  else if(EMPTY-(RATIO*7) >= Resistance){
+  Inches = 7;
+  }
+  else if(EMPTY-(RATIO*6) >= Resistance){
+  Inches = 6;
+  }
+  else if(EMPTY-(RATIO*5) >= Resistance){
+  Inches = 5;
+  }
+  else if(EMPTY-(RATIO*4) >= Resistance){
+  Inches = 4;
+  }
+  else if(EMPTY-(RATIO*3) >= Resistance){
+  Inches = 3;
+  }
+  else if(EMPTY-(RATIO*2) >= Resistance){
+  Inches = 2;
+  }
+  else if(EMPTY-RATIO >= Resistance){
+  Inches = 1;
+  }
+  else(){
     Inches = 0;
   }
-  else{
-    if (RESISTANCE < EMPTY - RATIO and RESISTANCE > EMPTY - (RATIO * 2)){
-      Inches = 1;
-    }
-    else{
-      if (RESISTANCE < EMPTY - (RATIO * 2) and RESISTANCE > EMPTY - (RATIO * 3)){
-        Inches = 2;
-      }
-      else{
-        if (RESISTANCE < EMPTY - (RATIO * 3) and RESISTANCE > EMPTY - (RATIO * 4)){
-          Inches = 3;
-        }
-        else{
-          if (RESISTANCE < EMPTY - (RATIO * 4) and RESISTANCE > EMPTY - (RATIO * 5)){
-            Inches = 4;
-          }
-          else{
-            if (RESISTANCE < EMPTY - (RATIO * 5) and RESISTANCE > EMPTY - (RATIO * 6)){
-              Inches = 5;
-            }
-            else{
-              if (RESISTANCE < EMPTY - (RATIO * 6) and RESISTANCE > EMPTY - (RATIO * 7)){
-                Inches = 6;
-              }
-              else{
-                if (RESISTANCE < EMPTY - (RATIO * 7) and RESISTANCE > EMPTY - (RATIO * 8)){
-                  Inches = 7;
-                }
-                else{
-                  if (RESISTANCE < EMPTY - (RATIO * 8) and RESISTANCE > EMPTY - (RATIO * 9)){
-                    Inches = 8;
-                  }
-                  else{
-                    if (RESISTANCE < EMPTY - (RATIO * 9) and RESISTANCE > EMPTY - (RATIO * 10)){
-                      Inches = 9;
-                    }
-                    else{
-                      if (RESISTANCE < EMPTY - (RATIO * 10) and RESISTANCE > EMPTY - (RATIO * 11)){
-                        Inches = 10;
-                      }
-                      else{
-                        if (RESISTANCE < EMPTY - (RATIO * 11) and RESISTANCE > EMPTY - (RATIO * 12)){
-                          Inches = 11;
-                        }
-                        else{
-                          if (RESISTANCE <= FULL){
-                            Inches = 12;        //Insert max inches here
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
+  
+  return Inches;
+  
+
 
 //Print data to serial monitor. Add your code here if you want to add on to this.
 void loop() {
