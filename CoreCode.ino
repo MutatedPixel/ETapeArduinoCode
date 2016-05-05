@@ -1,9 +1,11 @@
 /*Do whatever you want with this code. I dont care.
- * 
+ * The FindInches function is only acurate above 4 inches for me. This could be because of
+ * calibration issues or it could be a flaw in the code. Just test it before you use it on anything important.
+ *
  * Your wiring should look like this.
  * 
  *     Vin ---/\/\/\/-------/\/\/\/--- Gnd
- *              R1      |    Etape
+ *              R1      |    ETape
  *                      |
  *                  Analog pin
  * 
