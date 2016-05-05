@@ -93,7 +93,7 @@ int FindInches(float RATIO, float RESISTANCE, float EMPTY, float FULL){
   }
   
   return Inches;
-  
+}
 
 
 //Print data to serial monitor. Add your code here if you want to add on to this.
