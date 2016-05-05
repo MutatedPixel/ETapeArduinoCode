@@ -88,7 +88,7 @@ int FindInches(float RATIO, float RESISTANCE, float EMPTY, float FULL){
   else if(EMPTY-RATIO >= Resistance){
   Inches = 1;
   }
-  else(){
+  else{
     Inches = 0;
   }
   
