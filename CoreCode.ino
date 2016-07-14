@@ -1,4 +1,4 @@
-/*Do whatever you want with this code. I dont care.
+/*Do whatever you want with this code, just link to this repository and give credit.
  * The FindInches function is only acurate above 4 inches for me. This could be because of
  * calibration issues or it could be a flaw in the code. Just test it before you use it on anything important.
  *
