@@ -22,10 +22,11 @@
 #define resistor_ohm 560 //R1 in your voltage divider.
 #define analog_pin 0 //Which analog pin this is connected to on the arduino.
 #define analog_ref 5.0 //According to the arduino website, The "top" voltage of your ADC. (Continues below)
-//According to the arduino website 5v default on 5v arduino boards, and 3.3v on 3.3v arduino boards
+//According to the arduino website 5v default on 5v arduino boards (Uno, Micro, Nano, Mini, Mega), and 3.3v on 3.3v arduino boards (Due)
+// For more info head to https://www.arduino.cc/en/Main/Products and select your board to find this value.
 #define full_resistance 545.82 //What resistance the etape is at when it is at it's top marker.
 #define empty_resistance 3780.00 //What resistance the etape is at when no water is touching it.
-#define etape_inches 12 //What size etape you use, in inches.
+#define etape_inches 12 //What size etape you use, in inches. If this is less than 12 you need to follow the instructions in the FindInches Section.
 
 float Ratio;
 float Resistance;
@@ -51,9 +52,9 @@ float ReadResistance(int APIN, int RESISTOROHM, float AREF){
 //God this bit is horrible to look at. Finds how many inches the etape is at through magical ways. There's probably a better way to do this.
 int FindInches(float RATIO, float RESISTANCE, float EMPTY, float FULL){
   int Inches;
-//Comment out anything that is over the amount of inches your etape is. If you do that comment out your max inches too,
-//i.e. if my etape is 12 inches comment out the 12 inch if statement also. In place of that follow the instructions 
-//further down.
+//Comment out anything that is at or over the amount of inches your etape is.
+//i.e. if my etape is 6 inches comment out the 6-11 inch if statements.
+
   if(EMPTY-(RATIO*InsertMaxInchesHere) >= RESISTANCE){ //Replace InsertMaxInches with your max inches.
     Inches = InsertMaxInchesHere; //Do it again here.
   }
